@@ -3,3 +3,6 @@ This is a simple node.js console based application that generates a README.md fi
 
 ## Demo
 ![Demo](https://github.com/j-goldrath/readme-generator/blob/main/assets/images/readme-generator-demo.gif?raw=true)
+
+## Output Sample
+![Output Sample](https://github.com/j-goldrath/readme-generator/blob/main/assets/images/readme-generator-output-sample.png?raw=true)
