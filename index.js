@@ -58,8 +58,7 @@ function init() {
         .prompt(questions)
         .then((answers) => {
             // Use user feedback for... whatever!!
-            const readmeData = generateMarkdown(answers);
-            fs.writeToFile('./output/README.md', readmeData);
+            writeToFile(`./output/${answers.title}_README.md`, answers);
         })
         .catch((error) => {
             if (error.isTtyError) {

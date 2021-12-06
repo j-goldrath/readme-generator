@@ -31,16 +31,15 @@ function renderLicenseLink(license) {
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
-  return `## License\n
-  This application is covered under the license of ${renderLicenseLink(license)}\n`;
+  return `## License\nThis application is covered under the license of ${renderLicenseLink(license)}\n`;
 }
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(answers) {
 
-  let readmeTop;
+  let readmeTop = '';
   let readmeTableOfContents = '## Table of Contents\n';
-  let readmeContents;
+  let readmeContents = '';
   // create title section if user inputted a title
   if (answers.title !== '') {
     readmeTop += `# ${answers.title}\n${renderLicenseBadge(answers.license)}\n\n`;
@@ -71,7 +70,7 @@ function generateMarkdown(answers) {
   }
   // create license section if user inputted license
   if (answers.license !== '') {
-    readmeTableOfContents += '- [License](#license)\n';
+    readmeTableOfContents += '- [License](#license)\n\n';
     readmeContents += `${renderLicenseSection(answers.license)}\n`;
   }
 
