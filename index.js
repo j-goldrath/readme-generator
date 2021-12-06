@@ -1,30 +1,39 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer'); // inquirer module for user command line prompts
 const fs = require('fs'); // fs for writing data to files
-const generateMarkdown = require('./utils/generateMarkdonwn.js'); // local set of functions for generating markdown
+const generateMarkdown = require('./utils/generateMarkdown'); // local set of functions for generating markdown
+
 // TODO: Create an array of questions for user input
 const questions = [
     {
         name: 'title',
-        message: 'Please enter a title for this project:',
+        message: 'Please enter a title for this project (or leave blank to omit this section):',
     },
     {
         name: 'description',
-        message: 'Please provide a description for this project:',
+        message: 'Please provide a description for this project (or leave blank to omit this section):',
     },
     {
         name: 'installation',
-        message: 'Please provide any installation instructions you would like included:',
+        message: 'Please provide any installation instructions you would like included(or leave blank to omit this section):',
     },
     {
         name: 'usage',
-        message: 'Please provide any usage instructions you would like included:',
+        message: 'Please provide any usage instructions you would like included (or leave blank to omit this section):',
+    },
+    {
+        name: 'contributing',
+        message: 'Please provide any contribution guidelines you would like included (or leave blank to omit this section):',
+    },
+    {
+        name: 'tests',
+        message: 'Please provide any test instructions you would like included (or leave blank to omit this section):',
     },
     {
         type: 'list',
-        choices: ['MIT', 'BSD', 'GNU GPLv3'],
+        choices: ['MIT', 'BSD 3-Clause', 'GNU GPLv3'],
         name: 'license',
-        message: 'Please select the appropriate license type to use for this project',
+        message: 'Please select the appropriate license type to use for this project:',
     },
     {
         name: 'user',
@@ -49,6 +58,8 @@ function init() {
         .prompt(questions)
         .then((answers) => {
             // Use user feedback for... whatever!!
+            const readmeData = generateMarkdown(answers);
+            writeToFile('./output/README.md', readmeData);
         })
         .catch((error) => {
             if (error.isTtyError) {
