@@ -59,7 +59,7 @@ function init() {
         .then((answers) => {
             // Use user feedback for... whatever!!
             const readmeData = generateMarkdown(answers);
-            writeToFile('./output/README.md', readmeData);
+            fs.writeToFile('./output/README.md', readmeData);
         })
         .catch((error) => {
             if (error.isTtyError) {
