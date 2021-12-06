@@ -125,8 +125,8 @@ function generateMarkdown(answers) {
     readmeTableOfContents += '- [License](#license)\n';
     readMeBody += `## License\n${renderLicenseSection(answers.license)}\n`;
   }
-  
-  let finalReadme = readmeTop + readmeTableOfContents + readMeBody;
+
+  let finalReadme = readmeTop + readmeTableOfContents + readmeContents;
 
   return finalReadme;
 }
