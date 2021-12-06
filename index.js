@@ -43,7 +43,7 @@ const questions = [
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-    fs.appendFile(fileName, `${data}`, (err) =>
+    fs.appendFile(fileName, generateMarkdown(data), (err) =>
         // Ternary operator takes in a condition followed by a question mark (?)
         // then an expression to execute if the condition is truthy followed by a colon (:)
         // and finally the expression to execute if the condition is falsy.

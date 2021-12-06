@@ -43,36 +43,36 @@ function generateMarkdown(answers) {
   let readmeContents;
   // create title section if user inputted a title
   if (answers.title !== '') {
-    readMeTop += `# ${answers.title}\n${renderLicenseBadge(answers.license)}\n\n`;
+    readmeTop += `# ${answers.title}\n${renderLicenseBadge(answers.license)}\n\n`;
   }
   // create description section if user inputted a description
   if (answers.description !== '') {
-    readMeTop += `## Description\n${answers.description}\n\n`;
+    readmeTop += `## Description\n${answers.description}\n\n`;
   }
   // create installation section if user inputted installation instructions
   if (answers.installation !== '') {
     readmeTableOfContents += '- [Installation](#installation)\n';
-    readMeBody += `## Installation\n${answers.installation}\n\n`;
+    readmeContents += `## Installation\n${answers.installation}\n\n`;
   }
   // create usage section if user inputted usage instructions
   if (answers.usage !== '') {
     readmeTableOfContents += '- [Usage](#usage)\n';
-    readMeBody += `## Usage\n${answers.usage}\n\n`;
+    readmeContents += `## Usage\n${answers.usage}\n\n`;
   }
   // create contributing section if user inputted contributing guidelines
   if (answers.contributing !== '') {
     readmeTableOfContents += '- [Contributing](#contributing)\n';
-    readMeBody += `## Contributing\n${answers.contributing}\n\n`;
+    readmeContents += `## Contributing\n${answers.contributing}\n\n`;
   }
   // create tests section if user inputted test instructions
   if (answers.tests !== '') {
     readmeTableOfContents += '- [Tests](#tests)\n';
-    readMeBody += `## Tests\n${answers.tests}\n\n`;
+    readmeContents += `## Tests\n${answers.tests}\n\n`;
   }
   // create license section if user inputted license
   if (answers.license !== '') {
     readmeTableOfContents += '- [License](#license)\n';
-    readMeBody += `${renderLicenseSection(answers.license)}\n\n`;
+    readmeContents += `${renderLicenseSection(answers.license)}\n\n`;
   }
 
   let finalReadme = readmeTop + readmeTableOfContents + readmeContents;
