@@ -1,27 +1,23 @@
-# Sample
+# Sample Project
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Description
-description
+Your description goes here
 
 ## Table of Contents
 - [Installation](#installation)
 - [Usage](#usage)
-- [Contributing](#contributing)
 - [Tests](#tests)
 - [License](#license)
 
 ## Installation
-install
+Install like this
 
 ## Usage
-use
-
-## Contributing
-contribute
+This is how to use the appication
 
 ## Tests
-test
+Test instructions go here
 
 ## License
 This application is covered under the license of [MIT License](https://www.mit.edu/~amini/LICENSE.md)
